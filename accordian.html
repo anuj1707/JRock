@@ -4,81 +4,71 @@
 <meta charset='utf-8'>
 <title>Two different Accordian Example</title>
 <script src='JRock/JRock.js'></script>
+<style>
+.ds{
+font-size : 24pt;
+color: gray;
+font-weight :bold;
+
+}
+.accord1{
+background-color: gray;
+font-style :italic;
+font-weight :bold;
+}
+.heading{
+cursor: pointer;
+font-size : 15pt;
+color : purple;
+text-decoration : underline;
+}
+</style>
 </head>
 <body>
-<span style='font-size:23pt'>Accordian 1</span>
+<center>
+<span class='ds'>Data Structures</span>
+<div accordian="true">
+<h3 class='heading'>Tree</h3>
+<div class='accord1'>
+In computer science, a tree is a widely used abstract data type that represents a hierarchical tree structure with a set of connected nodes. Each node in the tree can be connected to many children (depending on the type of tree), but must be connected to exactly one parent, except for the root node, which has no parent. These constraints mean there are no cycles or "loops" (no node can be its own ancestor), and also that each child can be treated like the root node of its own subtree, making recursion a useful technique for tree traversal. In contrast to linear data structures, many trees cannot be represented by relationships between neighboring nodes in a single straight line.
+</div>
+<br>
+
+<h3 class='heading'>Graph</h3>
+<div class='accord1'>
+n computer science, a graph is an abstract data type that is meant to implement the undirected graph and directed graph concepts from the field of graph theory within mathematics.
+
+A graph data structure consists of a finite (and possibly mutable) set of vertices (also called nodes or points), together with a set of unordered pairs of these vertices for an undirected graph or a set of ordered pairs for a directed graph. These pairs are known as edges (also called links or lines), and for a directed graph are also known as edges but also sometimes arrows or arcs. The vertices may be part of the graph structure, or may be external entities represented by integer indices or references.
+
+</div>
+<br>
+
+<h3 class='heading'>Dynamic programming</h3>
+<div class='accord1'>
+Dynamic Programming is mainly an optimization over plain recursion. Wherever we see a recursive solution that has repeated calls for same inputs, we can optimize it using Dynamic Programming. The idea is to simply store the results of subproblems, so that we do not have to re-compute them when needed later. This simple optimization reduces time complexities from exponential to polynomial.</div>
+</div>
+<br>
+
+<span class='ds'>Development</span>
 
 <div accordian="true">
-<h3 style='cursor:pointer'>Heading 1</h3>
-<div>
-1 whatever whatever
-2 whatever whatever
-3 whatever whatever
-4 whatever whatever
-5 whatever whatever
-6 whatever whatever
-7 whatever whatever
+<h3 class='heading'>JQuery</h3>
+<div class='accord1'>
+jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.
+</div>
+<br>
+
+<h3 class='heading'>React JS</h3>
+<div class='accord1'>
+React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library for building user interfaces based on UI components. It is maintained by Meta (formerly Facebook) and a community of individual developers and companies.
+</div>
+<br>
+<h3 class='heading'>Node JS</h3>
+<div class='accord1'>
+Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on a JavaScript Engine (i.e. V8 engine) and executes JavaScript code outside a web browser, which was designed to build scalable network applications.
 </div>
 
-<h3 style='cursor:pointer'>Heading 2</h3>
-<div>
-11 whatever whaterver
-22 whatever whaterver
-33 whatever whaterver
-44 whatever whaterver
-55 whatever whaterver
-66 whatever whaterver
-77 whatever whaterver
 </div>
-
-<h3 style='cursor:pointer'>Heading 3</h3>
-<div>
-111 whatever whaterver
-222 whatever whaterver
-333 whatever whaterver
-444 whatever whaterver
-555 whatever whaterver
-666 whatever whaterver
-777 whatever whaterver
-</div>
-</div>
-<span style='font-size:23pt'>Accordian 2</span>
-
-<div accordian="true">
-<h3 style='cursor:pointer'>Heading 1000</h3>
-<div>
-1 whatever whaterver
-2 whatever whaterver
-3 whatever whaterver
-4 whatever whaterver
-5 whatever whaterver
-6 whatever whaterver
-7 whatever whaterver
-</div>
-
-<h3 style='cursor:pointer'>Heading 2000</h3>
-<div>
-11 whatever whaterver
-22 whatever whaterver
-33 whatever whaterver
-44 whatever whaterver
-55 whatever whaterver
-66 whatever whaterver
-77 whatever whaterver
-</div>
-
-<h3 style='cursor:pointer'>Heading 3000</h3>
-<div>
-111 whatever whaterver
-222 whatever whaterver
-333 whatever whaterver
-444 whatever whaterver
-555 whatever whaterver
-666 whatever whaterver
-777 whatever whaterver
-</div>
-
-
-</div>
+</center>
 </body>
 </html>
