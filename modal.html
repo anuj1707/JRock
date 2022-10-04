@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>Modal Example</title>
+<style>
+
+.jrock_modalMask
+{
+width:100%;
+height:100%;
+top:0;
+left:0;
+border:1px solid red;
+background:gray;
+position:fixed;
+opacity:70%;
+}
+.jrock_modal
+{
+width:400px;
+min-width:400px;
+height:300px;
+min-height:300px;
+background-color:blue;
+position:fixed;
+top:0;
+left:0;
+bottom:0;
+right:0;
+margin:auto;
+border:2px solid white;
+}
+.jrock_closeButton
+{
+float:right;
+padding:2px 7px;
+cursor:pointer;
+margin-right: 5px;
+margin-top: 5px;
+font-size: 14pt;
+}
+</style>
+<script src='JRock/JRock.js'></script>
+<script>
+//User written functions 
+
+function abBeforeOpening()
+{
+return true;
+}
+function abOpened()
+{
+//alert('modal with ab opened');    
+}
+function abBeforeClosing()
+{
+return true;
+}
+function abClosed()
+{
+//alert('modal with ab closed');
+}
+function createModal1()
+{
+$$$.modals.show("ab");
+}
+
+
+</script>
+</head>
+<body>
+
+<button type='button' onclick='createModal1()'>Show Modal </button>
+<div id='ab' style='display:none' forModal='true' size="200x300" header="Some heading" footer="Some footer" maskColor="#3355ff" modalBackgroundColor="#549933" closeButton="true" beforeOpening="abBeforeOpening()" afterOpening="abOpened()" beforeClosing="abBeforeClosing()" afterClosing="abClosed()">
+God is great
+<input type='text' id='myTextBox' value='Great'>
+</div>    
+
+</body>
+</html>

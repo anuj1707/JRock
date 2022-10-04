@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>Get type request without data Example</title>
+<script src='JRock/JRock.js'></script>
+<script>
+//JRock user part starts here
+function populateDesignations()
+{
+$$$.ajax({
+"url":"servletOne",
+"methodType":"GET",
+"success":function(responseData){
+var designations=JSON.parse(responseData);
+var designationsComboBox=document.getElementById("designationCode");
+var obj;
+for(var i=0;i<designations.length;i+=2)
+{
+obj=document.createElement("option");
+obj.value=designations[i].code;
+obj.text=designations[i].title;
+designationsComboBox.appendChild(obj);
+}
+},
+"failure":function(){
+alert("Some problem");
+}
+});
+}
+window.addEventListener('load',populateDesignations);
+</script>
+</head>
+<body>
+<h1>Get type request Example</h1>
+<select id='designationCode'></select>
+<br>
+<br>
+<a href='index.html'>Home</a>
+</body>
+</html>

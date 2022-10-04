@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>Get type with data Example</title>
+<script src='JRock/JRock.js'></script>
+
+<script>
+
+function getDesignation()
+{
+let titleSpan=$$$("title");//code pass kia
+titleSpan.html("");
+let code=$$$("code").value();
+$$$.ajax({
+"url":"servletTwo",
+"data":{
+"code":code
+
+},
+"methodType":"GET",
+"success":function(responseData){
+if(responseData=="INVALID")
+{
+alert("Invalid designation code");
+}
+else
+{
+var splits=responseData.split(",");
+titleSpan.html(splits[1]);
+}  
+},
+"failure":function(){
+alert("Some problem");
+}
+});
+}
+
+
+
+</script>
+</head>
+<body>
+<h1>Get type request with data Example</h1>
+Enter code <input type='text' id='code'>
+<button type='button' onclick='getDesignation()'>Get Designation</button><br><br>
+Title <span id='title'></span>
+<br>
+<a href='index.html'>Home</a>
+</body>
+</html>
