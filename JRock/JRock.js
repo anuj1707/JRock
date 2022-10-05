@@ -6,7 +6,6 @@
 4. Now to accordian will run
 
 */
-
 function $$$(cid){
 let element=document.getElementById(cid);
 if(!element) throw "Invalid id : "+cid;
@@ -65,16 +64,41 @@ contentIndex++;
 }
 var modalMaskDivision=document.createElement("div");
 modalMaskDivision.style.display='none';
-modalMaskDivision.classList.add("jrock_modalMask");
+modalMaskDivision.style.width='100%';		
+modalMaskDivision.style.height='100%';		
+modalMaskDivision.style.top='0';		
+modalMaskDivision.style.left='0';		
+modalMaskDivision.style.backgroundColor='gray';		
+modalMaskDivision.style.position='fixed';		
+modalMaskDivision.style.opacity='70%';		
+
+
 var modalDivision=document.createElement("div");
 modalDivision.style.display='none';
-modalDivision.classList.add("jrock_modal");
+modalDivision.style.width='400px';		
+modalDivision.style.height='300px';
+modalDivision.style.minHeight='300px';
+modalDivision.style.minWidth='400px';
+modalDivision.style.top='0';		
+modalDivision.style.left='0';
+modalDivision.style.bottom='0';
+modalDivision.style.right='0';
+modalDivision.style.margin='auto';
+modalDivision.style.border='2px solid white';		
+modalDivision.style.position='fixed';		
+
+
+
 document.body.appendChild(modalMaskDivision);
 document.body.appendChild(modalDivision);
 var headerDivision=document.createElement('div');
-headerDivision.style.marginRight="0px";
 headerDivision.style.height="40px";
 headerDivision.style.padding="5px";
+headerDivision.style.textAlign="center";
+headerDivision.style.fontWeight="bold";
+headerDivision.style.fontSize="20pt";
+
+
 modalDivision.appendChild(headerDivision);
 
 
@@ -118,9 +142,12 @@ modalDivision.style.background=mbc;
 
 var contentDivision=document.createElement("div");
 contentDivision.style.height=(modalDivision.style.height.substring(0,modalDivision.style.height.length-2)-130)+"px";
+headerDivision.style.marginTop="25px";
 contentDivision.style.width="98%";
 contentDivision.style.overflow="auto";
-contentDivision.style.padding="5px";
+contentDivision.style.padding="10px";
+contentDivision.style.fontSize="15pt";
+
 contentReference.remove();
 
 contentDivision.appendChild(contentReference);
@@ -130,12 +157,13 @@ modalDivision.appendChild(contentDivision);
 
 
 var footerDivision=document.createElement("div");
-footerDivision.style.left="0";
-footerDivision.style.right="0";
 footerDivision.style.height="40px";
-footerDivision.style.position="absolute";
-footerDivision.style.bottom="0";
+//footerDivision.style.position="absolute";
+footerDivision.style.textAlign="center";
+footerDivision.style.fontSize="15pt";
+
 footerDivision.style.padding="5px";
+
 modalDivision.appendChild(footerDivision);
 
 if(contentReference.hasAttribute("footer"))
@@ -144,6 +172,7 @@ var ft=contentReference.getAttribute("footer");
 footerDivision.innerHTML=ft;
 }
 
+	
 
 var closeButtonSpan=null;
 if(contentReference.hasAttribute("closeButton"))
@@ -152,10 +181,22 @@ var cb=contentReference.getAttribute("closeButton");
 if(cb.toUpperCase()=="TRUE")
 {
 closeButtonSpan=document.createElement("span");
-closeButtonSpan.classList.add("jrock_closeButton");
+//closeButtonSpan.classList.add("jrock_closeButton");
+closeButtonSpan.style.float='right';
+closeButtonSpan.style.cursor='pointer';
+closeButtonSpan.style.padding='0px';
+closeButtonSpan.style.marginRight='5px';
+closeButtonSpan.style.marginTop='0px';
+closeButtonSpan.style.fontSize='14pt';
+
+	
+
+
+
 var closeButtonMarker=document.createTextNode("x");
 closeButtonSpan.appendChild(closeButtonMarker);
 headerDivision.appendChild(closeButtonSpan);
+
 }
 }
 
