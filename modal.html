@@ -1,3 +1,5 @@
+
+//This is a sample test case
 <!doctype html>
 <html lang='en'>
 <head>
@@ -5,40 +7,94 @@
 <title>Modal Example</title>
 <style>
 
-.jrock_modalMask
-{
-width:100%;
-height:100%;
-top:0;
-left:0;
-border:1px solid red;
-background:gray;
-position:fixed;
-opacity:70%;
+.mainContainer{
+background-color : black;
+
 }
-.jrock_modal
-{
-width:400px;
-min-width:400px;
-height:300px;
-min-height:300px;
-background-color:blue;
-position:fixed;
-top:0;
-left:0;
-bottom:0;
-right:0;
-margin:auto;
-border:2px solid white;
-}
-.jrock_closeButton
-{
-float:right;
-padding:2px 7px;
+.bt1{
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 7px;
+padding-bottom: 7px;
+font-weight: bold;
+color: white;
+background-color: black;
 cursor:pointer;
-margin-right: 5px;
-margin-top: 5px;
-font-size: 14pt;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+
+}
+.bt2{
+color  :red;
+border : 1px solid red;
+cursor:pointer;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+padding-left: 15px;
+padding-right: 15px;
+padding-top: 7px;
+padding-bottom: 7px;
+font-weight: bold;
+
+}
+.bt3{
+float:right;
+padding-left:55px;
+padding-right:55px;
+padding-top:15px;
+padding-bottom:15px;
+color  :white;
+border : 1px solid white;
+cursor:pointer;
+background-color:black;
+font-family: "Lucida Console", "Courier New", monospace;
+margin-right:205px;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+}
+.bt4{
+margin-top: 15px;
+color:black;
+background-color:red;
+margin-left: 100px;
+padding-left:55px;
+padding-right:55px;
+padding-top:15px;
+padding-bottom:15px;
+font-family: "Lucida Console", "Courier New", monospace;
+-moz-border-radius: 15px;
+-webkit-border-radius: 15px;
+cursor: pointer;
+}
+
+.i1{
+margin-top: 50px;
+}
+.i2{
+margin-top: 10px;
+}
+.i3{
+margin-top: 10px;
+}
+
+.horizontal-line{
+padding-bottom: 13px;
+border-bottom:3px solid white;
+thickness: 1px;
+width:100%;
+}
+
+.d1{
+float :right;
+margin-right:205px;
+}
+.im{
+max-height:45px;
+margin-left:205px;
+}
+
+.txt{
+padding: 10px;
 }
 </style>
 <script src='JRock/JRock.js'></script>
@@ -50,7 +106,7 @@ function abBeforeOpening()
 return true;
 }
 function abOpened()
-{
+{	
 //alert('modal with ab opened');    
 }
 function abBeforeClosing()
@@ -69,13 +125,29 @@ $$$.modals.show("ab");
 
 </script>
 </head>
-<body>
+<body class='mainContainer'>
 
-<button type='button' onclick='createModal1()'>Show Modal </button>
-<div id='ab' style='display:none' forModal='true' size="200x300" header="Some heading" footer="Some footer" maskColor="#3355ff" modalBackgroundColor="#549933" closeButton="true" beforeOpening="abBeforeOpening()" afterOpening="abOpened()" beforeClosing="abBeforeClosing()" afterClosing="abClosed()">
-God is great
-<input type='text' id='myTextBox' value='Great'>
-</div>    
+<div class='horizontal-line'>
+<img src='images/tmlogo.png' class='im'>
+<button type='button' onclick='createModal1()' class='bt3'>Login</button>
+</div>
+<div class='d1'><button class='bt4' type='button' onclick='createModal1()'>Login</button></div>
+<br><br>
+<br><br>
+<center>
+<img class='i1' src='images/31_launched.jpg'>
+<img class='i2' src='images/road_map.jpg'>
+<img class='i3' src='images/tmstars.jpg'>
+</center>
+<div id='ab' style='text-align:center' forModal='true' size="500x300" header="Authentication" footer=""  maskColor="black" modalBackgroundColor="white" closeButton="true" beforeOpening="abBeforeOpening()" afterOpening="abOpened()" beforeClosing="abBeforeClosing()" afterClosing="abClosed()">
+Enter your registered mobile number
+<br><br>
+<input type='text' id='myTextBox' size="55px"
+class='txt' placeholder='Mobile number'>
+<br><br>
+<button type='button' class='bt1'>Get OTP</button>&nbsp;&nbsp;
+<button type='button' class='bt2'>Cancel</button>
+</div> 
 
 </body>
 </html>
